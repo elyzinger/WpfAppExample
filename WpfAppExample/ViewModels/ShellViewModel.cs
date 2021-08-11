@@ -9,13 +9,30 @@ namespace WpfAppExample.ViewModels
 {
     class ShellViewModel : Screen
     {
-        private string firstName;
+        private string firstName ;
         public string FirstName
         {
             get { return firstName; }
-            set { firstName = value; }
+            set { firstName = value;
+                NotifyOfPropertyChange(() => FirstName);
+                NotifyOfPropertyChange(() => FullName);
+            }
+        }
+        private string lastName;
+
+        public string LastName
+        {
+            get { return lastName; }
+            set { lastName = value;
+                NotifyOfPropertyChange(() => lastName);
+                NotifyOfPropertyChange(() => FullName);
+            }
         }
 
+        public string FullName
+        {
+            get { return $"{ FirstName} { LastName}"; }
+        }
 
     }
 }
