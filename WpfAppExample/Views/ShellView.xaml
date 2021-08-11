@@ -55,28 +55,35 @@
                    Grid.Row= "2" Grid.Column= "5" Text= "שם פרטי" />
         <TextBox    x:Name= "FirstName" Grid.Row= "2" Grid.Column= "4"
                    HorizontalContentAlignment= "Right" />
+        
         <TextBlock  Style= "{StaticResource txtBlockCss}"
                     Grid.Row= "2" Grid.Column= "3"  Text= "שם משפחה" />
         <TextBox x:Name= "LastName"  Grid.Row= "2" Grid.Column= "2"
                   HorizontalContentAlignment= "Right" />
+        
         <TextBlock Style= "{StaticResource txtBlockCss}"
                    Grid.Row= "3" Grid.Column= "5" FontSize= "30" Text= "ת.ז" />
         <TextBox x:Name= "txtTZ"  Width= "200" Grid.Row= "3" Grid.Column= "4"
                   HorizontalContentAlignment= "Right" />
+        
         <TextBlock Style= "{StaticResource txtBlockCss}"
                    Grid.Row= "3" Grid.Column= "3" FontSize= "30" Text= "תפקיד" />
         <TextBox x:Name= "txtJob"  Width= "200" Grid.Row= "3" Grid.Column= "2"
                   HorizontalContentAlignment= "Right" />
-        <CheckBox x:Name= "txtMale"  Grid.Row= "4" Grid.Column= "2" Margin= "0,0,90,0" FontSize= "20" Content= "זכר" FlowDirection= "RightToLeft" />
-        <CheckBox x:Name= "txtFrmale"  Grid.Row= "4" Grid.Column= "2" FontSize= "20"  Content= "נקבה" FlowDirection= "RightToLeft" />
-      <!--< ComboBox x:Name= "comGender"  Grid.Row= "4" Grid.Column= "2" >
-            <ComboBoxItem Content= "ז" />
-            <ComboBoxItem Content= "נ" />
-            </ ComboBox >-->
-        <TextBlock   Grid.Row= "4" Grid.Column= "4"
-                   Text="{Binding Path= FullName, Mode=OneWay}" HorizontalAlignment="Right" />
-        <Button  x:Name= "btnSave" Content= "שמור" Margin= "0,50,0,0" Click= "btnSave_Click"
-                 Grid.Row= "4" Grid.Column= "4" Height= "30" FontSize= "22" FontWeight= "Bold" Cursor= "Hand" />
+        
+        <CheckBox x:Name= "txtMale"  Grid.Row= "4" Grid.Column= "2" Margin= "0,0,0,0" FontSize= "20" Content= "זכר"  />
+        <CheckBox x:Name= "txtFrmale"  Grid.Row= "4" Grid.Column= "2" FontSize= "20"  Content= "נקבה" HorizontalAlignment="Center" />
+
+        <ComboBox x:Name="Employees"  Grid.Row= "4" Grid.Column= "3" Height="30" Width="150" 
+                  SelectedItem="{Binding Path= Employee, Mode=OneWayToSource}"
+                  DisplayMemberPath="FirstName" HorizontalAlignment="Left"/>
+
+
+        <TextBlock   Grid.Row= "4" Grid.Column= "2" Grid.ColumnSpan= "3" 
+                   x:Name="Employee_TZ" HorizontalAlignment="Right" MaxWidth="400"  />
+        
+        <Button  x:Name= "btnSave" Content= "שמור" Margin= "0,50,0,0"   
+                 Grid.Row= "4" Grid.Column= "4" Height= "30" FontSize= "22" FontWeight= "Bold" Cursor= "Hand" Width="200" />
 
         <DataGrid Grid.Row= "7" Grid.Column= "1" Grid.ColumnSpan= "5"  Margin= "0,10,0,0" />
         
