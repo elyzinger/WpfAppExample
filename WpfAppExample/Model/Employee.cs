@@ -30,5 +30,9 @@ namespace WpfAppExample.Model
             this.HasAddress = hasAddress;
 
         }
+        public string FullName
+        {
+            get { return $"{ FirstName} { LastName}"; }
+        }
     }
 }

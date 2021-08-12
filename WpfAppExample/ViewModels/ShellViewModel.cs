@@ -1,4 +1,5 @@
-﻿using Caliburn.Micro;
+﻿
+using Caliburn.Micro;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using WpfAppExample.Model;
 
 namespace WpfAppExample.ViewModels
 {
-    class ShellViewModel : Screen
+    class ShellViewModel : Conductor<object>
     {
         private string firstName ;
         private string lastName;
@@ -69,6 +70,10 @@ namespace WpfAppExample.ViewModels
         public void btnSave(string firstName, string lastName)
         {
             //save to db
+        }
+        public void  btnUpdate() 
+        {
+            ActivateItemAsync(new UpdateViewModel());
         }
     }
 }
