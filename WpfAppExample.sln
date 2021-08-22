@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1340
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppExample", "WpfAppExample\WpfAppExample.csproj", "{4674738A-3524-4C80-A3FB-97E3D7673703}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiLibrary", "ApiLibrary\ApiLibrary.csproj", "{38358E13-51BF-4830-B42D-B0BDA46BA7AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4674738A-3524-4C80-A3FB-97E3D7673703}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4674738A-3524-4C80-A3FB-97E3D7673703}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4674738A-3524-4C80-A3FB-97E3D7673703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38358E13-51BF-4830-B42D-B0BDA46BA7AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38358E13-51BF-4830-B42D-B0BDA46BA7AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38358E13-51BF-4830-B42D-B0BDA46BA7AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38358E13-51BF-4830-B42D-B0BDA46BA7AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 ﻿
+using ApiLibrary;
 using Caliburn.Micro;
 using System;
 using System.Collections.Generic;
@@ -15,13 +16,14 @@ namespace WpfAppExample.ViewModels
         private string lastName;
         private Employee employee;
         private BindableCollection<Employee> employees = new BindableCollection<Employee>();
-        
+       
 
         public ShellViewModel()
         {
             Employees.Add(new Employee {TZ = 1234, FirstName = "איליי", LastName="שי", Job = "מתכנת", StartDate = DateTime.Now , HasAddress = true});
             Employees.Add(new Employee { TZ = 111, FirstName = "אלעד", LastName = "רמי", Job = "חשב שכר", StartDate = DateTime.Now, HasAddress = true });
             Employees.Add(new Employee { TZ = 222, FirstName = "חיים", LastName = "זאב", Job = "מנקה", StartDate = DateTime.Now, HasAddress = true });
+            ApiHelper.InitializeClient();
         }
         public string FirstName
         {
@@ -61,15 +63,18 @@ namespace WpfAppExample.ViewModels
 
         public bool CanbtnSave(string firstName, string lastName)
         {
-            if (string.IsNullOrWhiteSpace(firstName) && string.IsNullOrWhiteSpace(lastName))
+            if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
                 return false;
             return true;
                 
             
         }
-        public void btnSave(string firstName, string lastName)
+        public async void btnSave(string firstName, string lastName)
         {
-            //save to db
+
+            var currency = await CurrencyProcessor.LoadCurrency();
+            Console.WriteLine(currency);
+        
         }
         public void  btnUpdate() 
         {

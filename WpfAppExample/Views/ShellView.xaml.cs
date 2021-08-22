@@ -24,6 +24,6 @@ namespace WpfAppExample.Views
             InitializeComponent();
         }
 
-      
+     
     }
 }

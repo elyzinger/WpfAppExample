@@ -9,5 +9,6 @@ namespace WpfAppExample.ViewModels
 {
     class UpdateViewModel : Screen
     {
+
     }
 }

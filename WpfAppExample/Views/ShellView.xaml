@@ -83,7 +83,7 @@
         <TextBlock   Grid.Row= "4" Grid.Column= "4" Grid.ColumnSpan= "3" 
                    x:Name="Employee_FullName" HorizontalAlignment="Center" MaxWidth="400"  />
         
-        <Button  x:Name= "btnSave" Content= "שמור" Margin= "0,50,0,0"   
+        <Button  x:Name= "btnSave" Content= "שמור" Margin= "0,50,0,0"    
                  Grid.Row= "4" Grid.Column= "3" Height= "30" FontSize= "22" FontWeight= "Bold" Cursor= "Hand" Width="200" />
 
         <Button x:Name= "btnUpdate"  Content= "עדכון פרטים" Margin= "0,50,0,0"   
