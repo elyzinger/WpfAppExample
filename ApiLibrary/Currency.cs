@@ -11,6 +11,13 @@ namespace ApiLibrary
         public string  Base { get; set; }
         public DateTime Date { get; set; }
 
-        public  CurrencyRates Rates { get; set; }
+        public  Dictionary<string, double> Rates { get; set; }
+
+
+        public Currency()
+        {
+
+        }
+
     }
 }

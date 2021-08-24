@@ -51,7 +51,6 @@
     <Compile Include="ApiHelper.cs" />
     <Compile Include="Currency.cs" />
     <Compile Include="CurrencyProcessor.cs" />
-    <Compile Include="CurrencyRates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

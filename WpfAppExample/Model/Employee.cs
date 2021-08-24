@@ -9,7 +9,7 @@ namespace WpfAppExample.Model
     class Employee
     {
         public int TZ { get; set; }
-        public string FirstName { get; set; }
+        public string FirstName { get; set; }       
         public string LastName { get; set; }  
         public string Job { get; set; }
         public DateTime StartDate { get; set; }

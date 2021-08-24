@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppExample.Views"
-        mc:Ignorable="d" FontFamily="Arial"  FontSize="25" 
-        Title="ShellView" Height="650" Width="800" Background="#FF487EB0" 
-        Foreground="#FFDCDDE1" WindowStartupLocation="CenterScreen">
+        mc:Ignorable="d" FontFamily="Arial"  FontSize="25"
+        Title="Currency" Height="650" Width="900" Background="#FF487EB0" 
+        x:Name="Window" Foreground="#FFDCDDE1" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style  TargetType="TextBox"  >
             <Setter Property="Margin" Value="20,0,0,20"/>
@@ -61,11 +61,12 @@
                     Grid.Row= "2" Grid.Column= "3"  Text= "שם משפחה" />
         <TextBox x:Name= "LastName"  Grid.Row= "2" Grid.Column= "2"
                   HorizontalContentAlignment= "Right" />
-        
-        <TextBlock Style= "{StaticResource txtBlockCss}"
-                   Grid.Row= "3" Grid.Column= "5" FontSize= "30" Text= "ת.ז" />
+
+        <TextBlock  Style= "{StaticResource txtBlockCss}" 
+                   Grid.Row= "3" Grid.Column= "5" FontSize= "30" 
+                    Text= "{Binding Path=Currency_Rates, Mode=OneWay}" />
         <TextBox x:Name= "txtTZ"  Width= "200" Grid.Row= "3" Grid.Column= "4"
-                  HorizontalContentAlignment= "Right" />
+                   HorizontalContentAlignment= "Right" />
         
         <TextBlock Style= "{StaticResource txtBlockCss}"
                    Grid.Row= "3" Grid.Column= "3" FontSize= "30" Text= "תפקיד" />
@@ -75,9 +76,15 @@
         <CheckBox x:Name= "txtMale"  Grid.Row= "4" Grid.Column= "2" Margin= "0,0,0,0" FontSize= "20" Content= "זכר"  />
         <CheckBox x:Name= "txtFrmale"  Grid.Row= "4" Grid.Column= "2" FontSize= "20"  Content= "נקבה" HorizontalAlignment="Center" />
 
-        <ComboBox x:Name="Employees"  Grid.Row= "4" Grid.Column= "4" Height="30" Width="150" 
-                  SelectedItem="{Binding Path= Employee, Mode=OneWayToSource}"
-                  DisplayMemberPath="FirstName" HorizontalAlignment="Right"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="5" Text="בחר מטבע " Margin="5 20 0 0"
+                   Style= "{StaticResource txtBlockCss}" />
+        
+        <ComboBox x:Name="Currency_Rates"  Grid.Row= "4" Grid.Column= "4" Height="30" Width="150"                 
+                   SelectedValuePath="Key" DisplayMemberPath="Key" 
+                   HorizontalAlignment="Right" SelectedIndex="0">
+        <!--// <ListBoxItem>Please Select</ListBoxItem>-->
+        </ComboBox>
 
 
         <TextBlock   Grid.Row= "4" Grid.Column= "4" Grid.ColumnSpan= "3" 
