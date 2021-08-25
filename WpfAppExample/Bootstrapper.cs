@@ -1,24 +1,24 @@
-﻿using Caliburn.Micro;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using WpfAppExample.ViewModels;
+﻿
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+//using System.Windows;
+//using WpfAppExample.ViewModels;
 
-namespace WpfAppExample
-{
-    public class Bootstrapper : BootstrapperBase
-    {
-        public Bootstrapper()
-        {
-            Initialize();
-        }
+//namespace WpfAppExample
+//{
+//    public class Bootstrapper : BootstrapperBase
+//    {
+//        public Bootstrapper()
+//        {
+//            Initialize();
+//        }
 
-        protected override void OnStartup(object sender, StartupEventArgs e)
-        {
-            DisplayRootViewFor<ShellViewModel>();
-        }
-    }
-}
+//        protected override void OnStartup(object sender, StartupEventArgs e)
+//        {
+//            DisplayRootViewFor<ShellViewModel>();
+//        }
+//    }
+//}

@@ -1,29 +1,29 @@
-﻿<Window x:Class="WpfAppExample.Views.ShellView"
+﻿<Window x:Class="WpfAppExample.Views.StartWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppExample.Views"
         mc:Ignorable="d" FontFamily="Arial"  FontSize="25"
-        Title="Currency" Height="650" Width="900" Background="#FF487EB0" 
-        x:Name="Window" Foreground="#FFDCDDE1" WindowStartupLocation="CenterScreen">
+        Title="StartWindow" Height="650" Width="900"  Background="#FF487EB0" 
+        Foreground="#FFDCDDE1" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style  TargetType="TextBox"  >
             <Setter Property="Margin" Value="20,0,0,20"/>
-        <Setter Property="FontSize" Value="25"/>
-        <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="Width" Value="200"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Width" Value="200"/>
 
-    </Style>
-    <Style TargetType="TextBlock" x:Key="txtBlockCss" >
-        <Setter Property="Margin" Value="10,0,0,20"/>
-        <Setter Property="FontSize" Value="30"/>
-        <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="txtBlockCss" >
+            <Setter Property="Margin" Value="10,0,0,20"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontWeight" Value="Bold"/>
 
-        <!--<Setter Property="Margin" Value="100"/>-->
+            <!--<Setter Property="Margin" Value="100"/>-->
 
 
-    </Style>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -56,7 +56,6 @@
                    Grid.Row= "2" Grid.Column= "5" Text= "שם פרטי" />
         <TextBox    x:Name= "FirstName" Grid.Row= "2" Grid.Column= "4"
                    HorizontalContentAlignment= "Right" />
-        
         <TextBlock  Style= "{StaticResource txtBlockCss}"
                     Grid.Row= "2" Grid.Column= "3"  Text= "שם משפחה" />
         <TextBox x:Name= "LastName"  Grid.Row= "2" Grid.Column= "2"
@@ -67,18 +66,19 @@
                     Text= "ת.ז " />
         <TextBox x:Name= "txtTZ"  Width= "200" Grid.Row= "3" Grid.Column= "4"
                    HorizontalContentAlignment= "Right" />
-        
+
         <TextBlock Style= "{StaticResource txtBlockCss}"
                    Grid.Row= "3" Grid.Column= "3" FontSize= "30" Text= "תפקיד" />
         <TextBox x:Name= "txtJob"  Width= "200" Grid.Row= "3" Grid.Column= "2"
                   HorizontalContentAlignment= "Right" />
-        
+
         <CheckBox x:Name= "txtMale"  Grid.Row= "4" Grid.Column= "2" Margin= "0,0,0,0" FontSize= "20" Content= "זכר"  />
         <CheckBox x:Name= "txtFrmale"  Grid.Row= "4" Grid.Column= "2" FontSize= "20"  Content= "נקבה" HorizontalAlignment="Center" />
 
+
         <TextBlock   Grid.Row= "4" Grid.Column= "4" Text="{Binding ElementName=Currency_Rates, Path=SelectedValue}" Grid.ColumnSpan= "3" 
                    x:Name="Employee_FirstName" HorizontalAlignment="Center" MaxWidth="400"  />
-        
+
         <TextBlock Grid.Row="4" Grid.Column="5" Text="בחר מטבע " Margin="5 20 0 0"
                    Style= "{StaticResource txtBlockCss}" />
 
@@ -86,12 +86,10 @@
                    SelectedValuePath="Key" DisplayMemberPath="Key" 
                    HorizontalAlignment="Right" SelectedIndex="0" 
                   SelectedItem="{Binding Path=Employee.FirstName, Mode=OneWayToSource}">
-        <!--// <ListBoxItem>Please Select</ListBoxItem>-->
+            <!--// <ListBoxItem>Please Select</ListBoxItem>-->
         </ComboBox>
 
 
-        
-        
         <Button  x:Name= "btnSave" Content= "שמור" Margin= "0,50,0,0"    
                  Grid.Row= "4" Grid.Column= "3" Height= "30" FontSize= "22" FontWeight= "Bold" Cursor= "Hand" Width="200" />
 
