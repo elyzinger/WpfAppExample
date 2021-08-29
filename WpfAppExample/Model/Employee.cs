@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace WpfAppExample.Model
 {
-    class Employee
+    class Employee : INotifyPropertyChanged
     {
         public int TZ { get; set; }
         public string FirstName { get; set; }       
@@ -33,6 +34,16 @@ namespace WpfAppExample.Model
         public string FullName
         {
             get { return $"{ FirstName} { LastName}"; }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChange(string property)
+        {
+            if(property != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            }
         }
     }
 }

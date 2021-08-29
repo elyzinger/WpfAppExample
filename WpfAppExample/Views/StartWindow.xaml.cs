@@ -11,17 +11,25 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfAppExample.ViewModels;
 
 namespace WpfAppExample.Views
 {
     /// <summary>
     /// Interaction logic for StartWindow.xaml
     /// </summary>
+   
     public partial class StartWindow : Window
     {
+        
         public StartWindow()
         {
+           
             InitializeComponent();
+        
+            this.DataContext = new StartWindowViewModel();
+            //currencyComb.ItemsSource = mvvm.Currency.Rates;
         }
+
     }
 }
